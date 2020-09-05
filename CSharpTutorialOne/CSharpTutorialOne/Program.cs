@@ -20,6 +20,17 @@ namespace CSharpTutorialOne
         //just like anything else, this is the main thread, hence the name Main
         static void Main(string[] args)
         {
+
+            int i = 42;
+            float f = 3.141f;
+            double d = 3.141592653;
+            bool b = true;
+
+            int userBase;
+            double userHeight;
+            double triangleArea;
+            int intTriangleArea;
+
             //How big is a char
             Console.Write("a char is {0} bytes\n", sizeof(char));
             //How big is a int
@@ -37,16 +48,24 @@ namespace CSharpTutorialOne
             /* Let's play around with some builtin conversion methods
              */
 
-            int i = 42;
-            float f = 3.141592653f;
-            double d = 3.141592653f;
-            bool b = true;
+ 
 
           
             Console.WriteLine(i.ToString());
             Console.WriteLine(f.ToString());
             Console.WriteLine(d.ToString());
             Console.WriteLine(b.ToString());
+            Console.ReadKey();
+
+            Console.WriteLine("let's find the area of a triangle");
+            Console.WriteLine("enter the base as an integer");
+            userBase = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter the height as a float");
+            userHeight = Convert.ToDouble(Console.ReadLine());
+            triangleArea = (double)userBase * userHeight;
+            Console.WriteLine(triangleArea.ToString());
+            intTriangleArea = userBase * (int)userHeight;
+            Console.WriteLine(intTriangleArea.ToString());
             Console.ReadKey();
 
         }
