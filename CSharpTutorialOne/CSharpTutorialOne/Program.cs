@@ -33,6 +33,22 @@ namespace CSharpTutorialOne
              * Objects are base class reference variables, and must be converted before being used
              * Dynamics are similar, but can be changed at runtime
              * Strings seem to be just like the strings I am used to*/
+
+            /* Let's play around with some builtin conversion methods
+             */
+
+            int i = 42;
+            float f = 3.141592653f;
+            double d = 3.141592653f;
+            bool b = true;
+
+          
+            Console.WriteLine(i.ToString());
+            Console.WriteLine(f.ToString());
+            Console.WriteLine(d.ToString());
+            Console.WriteLine(b.ToString());
+            Console.ReadKey();
+
         }
     }
 }
