@@ -13,12 +13,61 @@ namespace CSharpTutorialOne
 {
     //While C++ allows you to use classes, C# seems to demand it. I can kind of see the advantages.
     //Because everything is contained in a class, I'm not sure if you can have function prototypes like in C++
-    //There are definitely not pointers like in C++. I will need to learn how to work with that. This will be interesting.
+    //There are pointers like in C++, but they are apparently considered unsafe.
+    //Admittedly pointers are dangerous in C++ too.
     class Program
     {
+        //just like anything else, this is the main thread, hence the name Main
         static void Main(string[] args)
         {
-            //just like anything else, this is the main thread, hence the name Main
+
+            int i = 42;
+            float f = 3.141f;
+            double d = 3.141592653;
+            bool b = true;
+
+            int userBase;
+            double userHeight;
+            double triangleArea;
+            int intTriangleArea;
+
+            //How big is a char
+            Console.Write("a char is {0} bytes\n", sizeof(char));
+            //How big is a int
+            Console.Write("a int is {0} bytes\n", sizeof(int));
+            //How big is a float
+            Console.Write("a float is {0} bytes\n", sizeof(float));
+            Console.ReadKey();
+
+            /* C# has a few reference data types that refer to memory locations.
+             * I'm not sure how these differ from pointers
+             * Objects are base class reference variables, and must be converted before being used
+             * Dynamics are similar, but can be changed at runtime
+             * Strings seem to be just like the strings I am used to*/
+
+            /* Let's play around with some builtin conversion methods
+             */
+
+ 
+
+          
+            Console.WriteLine(i.ToString());
+            Console.WriteLine(f.ToString());
+            Console.WriteLine(d.ToString());
+            Console.WriteLine(b.ToString());
+            Console.ReadKey();
+
+            Console.WriteLine("let's find the area of a triangle");
+            Console.WriteLine("enter the base as an integer");
+            userBase = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter the height as a float");
+            userHeight = Convert.ToDouble(Console.ReadLine());
+            triangleArea = (double)userBase * userHeight;
+            Console.WriteLine(triangleArea.ToString());
+            intTriangleArea = userBase * (int)userHeight;
+            Console.WriteLine(intTriangleArea.ToString());
+            Console.ReadKey();
+
         }
     }
 }
