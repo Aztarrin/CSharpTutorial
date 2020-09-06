@@ -30,6 +30,8 @@ namespace CSharpTutorialOne
             double userHeight;
             double triangleArea;
             int intTriangleArea;
+            char userSelect;
+            bool displayDataTypes = true;
 
             //How big is a char
             Console.Write("a char is {0} bytes\n", sizeof(char));
@@ -37,7 +39,7 @@ namespace CSharpTutorialOne
             Console.Write("a int is {0} bytes\n", sizeof(int));
             //How big is a float
             Console.Write("a float is {0} bytes\n", sizeof(float));
-            Console.ReadKey();
+            //Console.ReadKey();
 
             /* C# has a few reference data types that refer to memory locations.
              * I'm not sure how these differ from pointers
@@ -46,16 +48,37 @@ namespace CSharpTutorialOne
              * Strings seem to be just like the strings I am used to*/
 
             /* Let's play around with some builtin conversion methods
+             * Let's throw some control loops in there, just for fun
              */
-
- 
-
-          
-            Console.WriteLine(i.ToString());
-            Console.WriteLine(f.ToString());
-            Console.WriteLine(d.ToString());
-            Console.WriteLine(b.ToString());
-            Console.ReadKey();
+            do
+            {
+                Console.WriteLine("What do you want so see?");
+                Console.WriteLine("(i) int");
+                Console.WriteLine("(f) float");
+                Console.WriteLine("(d) double");
+                Console.WriteLine("(b) bool");
+                Console.WriteLine("(n) nothing, I want to leave");
+                 userSelect = Convert.ToChar(Console.ReadLine());//note to self: tried to use readKey, but I don't think readKey returns a value
+                switch (userSelect)
+                {
+                    case 'i':
+                        Console.WriteLine(i.ToString());
+                    break;
+                    case 'f':
+                        Console.WriteLine(f.ToString());
+                    break;
+                    case 'd':
+                        Console.WriteLine(d.ToString());
+                    break;
+                    case 'b':
+                        Console.WriteLine(b.ToString());
+                    break;
+                    case 'n':
+                        displayDataTypes = false;
+                    break;
+                }
+            }
+            while (displayDataTypes);
 
             Console.WriteLine("let's find the area of a triangle");
             Console.WriteLine("enter the base as an integer");
